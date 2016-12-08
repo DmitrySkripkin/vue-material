@@ -4,7 +4,8 @@ export default {
     disabled: Boolean,
     required: Boolean,
     maxlength: [Number, String],
-    placeholder: String
+    placeholder: String,
+    name: String
   },
   watch: {
     value(value) {
@@ -18,6 +19,9 @@ export default {
     },
     placeholder() {
       this.setParentPlaceholder();
+    },
+    name() {
+      this.setParentName();
     },
     maxlength() {
       this.handleMaxLength();
@@ -39,6 +43,9 @@ export default {
     },
     setParentPlaceholder() {
       this.parentContainer.hasPlaceholder = !!this.placeholder;
+    },
+    setParentName() {
+      this.parentContainer.hasName = !!this.name;
     },
     onFocus() {
       this.parentContainer.isFocused = true;

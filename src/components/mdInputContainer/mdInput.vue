@@ -7,6 +7,7 @@
     :required="required"
     :placeholder="placeholder"
     :maxlength="maxlength"
+    :name="name"
     @focus="onFocus"
     @blur="onBlur"
     @input="onInput"
